@@ -1,8 +1,8 @@
-package top.janweehisa;
+package top.janweehsia;
 
 public class Greeting {
     static {
-        System.loadLibrary("simple_jni");
+        System.loadLibrary("greeting_lib.dll");
     }
 
     public native void sayHello();

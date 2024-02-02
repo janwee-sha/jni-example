@@ -1,7 +1,7 @@
 # Overview
 
 This is a Java demo project using JNI (Java Native Interface), 
-    which invokes native C code through Java code and outputs "Hello from C!".
+    which invokes native C++ code through Java code and outputs "Hello from C++!".
 
 # How to build from source
 
@@ -31,28 +31,31 @@ gcc --version
 If the powershell prints a MinGW-w64 version output, then we are done.
 
 ## 2. Compile Java source file and generate a JNI header file:
-```
-cd C:\ideaprojects\janwee-sha\simple-jni-app\
-javac -h .\src\cpp src\top\janweehisa\Greeting.java
-```
 
-## 3. 运行如下命令，编译本地代码，在Windows中生成C++代码的动态链接库：
+Switch to the project's root directory and run the following `javac` command:
 ```bash
-# 编译 C++ 本地代码生成本地库
-g++ -shared -o Greeting.dll -I $env:JAVA_HOME\include -I $env:JAVA_HOME\include\win32 src\cpp\Greeting.cpp
-
-# 编译 Java 代码生成类文件
-javac src\top\janweehsia\Greeting.java
+cd <project_root_directory>
+javac -h .\src\cpp\ -d .\out\ .\src\top\janweehsia\Greeting.java
 ```
 
-## 4. 打包为 JAR 文件：
+## 3. Compile C++ native code to generate a local library (on Windows a library is a DLL file):
+```bash
+g++ -shared -o greeting_lib.dll -I $env:JAVA_HOME\include -I $env:JAVA_HOME\include\win32 src\cpp\Greeting.cpp
+```
+
+## 4. Package to JAR file：
 
 ```bash
-jar cf QtJambiDemo.jar -C build .
+jar cfe JNIExample.jar top.janweehsia.Greeting -C out .
 ```
 
-# How to use JNIExample
+# How to use
+
+## Requirements:
+- Java Runtime Kit (e.g. OpenJDK)
+
+## Command to run
 
 ```bash
-java -jar QtJambiDemo.jar
+java -jar JNIExample.jar
 ```
