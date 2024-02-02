@@ -51,7 +51,7 @@ jar cfe JNIExample.jar top.janweehsia.Greeting -C out .
 # How to use
 
 ## Requirements:
-- Java Runtime Kit (e.g. OpenJDK)
+- Java Runtime Kit (e.g. OpenJRE)
 
 ## Command to run
 
