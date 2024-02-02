@@ -56,5 +56,5 @@ jar cfe JNIExample.jar top.janweehsia.Greeting -C out .
 ## Command to run
 
 ```bash
-java -Djava.library.path=. -jar JNIExample.jar
+java -jar JNIExample.jar
 ```
