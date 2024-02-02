@@ -1,7 +1,7 @@
 # Overview
 
 This is a Java demo project using JNI (Java Native Interface), 
-    which invokes native C++ code through Java code and outputs "Hello from C++!".
+    which invokes native C++ code through Java code and outputs "Hello from C++ using JNI!".
 
 # How to build from source
 
@@ -34,13 +34,12 @@ If the powershell prints a MinGW-w64 version output, then we are done.
 
 Switch to the project's root directory and run the following `javac` command:
 ```bash
-cd <project_root_directory>
 javac -h .\src\cpp\ -d .\out\ .\src\top\janweehsia\Greeting.java
 ```
 
 ## 3. Compile C++ native code to generate a local library (on Windows a library is a DLL file):
 ```bash
-g++ -shared -o greeting_lib.dll -I $env:JAVA_HOME\include -I $env:JAVA_HOME\include\win32 src\cpp\Greeting.cpp
+g++ -shared -o sayhello.dll -I $env:JAVA_HOME\include -I $env:JAVA_HOME\include\win32 src\cpp\Greeting.cpp
 ```
 
 ## 4. Package to JAR file：
@@ -57,5 +56,5 @@ jar cfe JNIExample.jar top.janweehsia.Greeting -C out .
 ## Command to run
 
 ```bash
-java -jar JNIExample.jar
+java -Djava.library.path=. -jar JNIExample.jar
 ```

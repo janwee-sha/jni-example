@@ -2,7 +2,7 @@ package top.janweehsia;
 
 public class Greeting {
     static {
-        System.loadLibrary("greeting_lib.dll");
+        System.loadLibrary("sayhello");
     }
 
     public native void sayHello();
