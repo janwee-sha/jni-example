@@ -1,7 +1,7 @@
 # Overview
 
 This is a Java demo project using JNI (Java Native Interface), 
-    which invokes native C++ code through Java code and outputs "Hello from C++ using JNI!".
+    which invokes native C++ code through Java code and prints "Hello from C++ using JNI!".
 
 # How to build from source
 
@@ -57,4 +57,4 @@ jar cfe JNIExample.jar top.janweehsia.Greeting -C out .
 
 ```bash
 java -jar JNIExample.jar
-```
+``` 
