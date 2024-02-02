@@ -26,7 +26,7 @@ choco install mingw -y
 
 ### 3). Restart the Powershell, and run the following command to check if the installation is successful:
 ```bash
-gcc --version
+g++ --version
 ```
 If the powershell prints a MinGW-w64 version output, then we are done.
 
