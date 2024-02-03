@@ -30,7 +30,7 @@ g++ --version
 ```
 If the powershell prints a MinGW-w64 version output, then we are done.
 
-## 2. Compile Java source file and generate a JNI header file:
+## 2. Compile Java source file and generate a C/C++ header file:
 
 Switch to the project's root directory and run the following `javac` command:
 ```bash
