@@ -6,8 +6,9 @@ This is a Java demo project using JNI (Java Native Interface),
 # How to build from source
 
 ## Requirements
+- Windows 64-Bit system
 - Java Development Kit (e.g. OpenJDK)
-- C++ compiler (e.g. gcc(for Linux), MinGW(for Windows))
+- C++ compiler (e.g. MinGW(for Windows))
 
 ## 1. Install MinGW-w64 on Windows (Skip the step if your Windows already have MinGW installed)
 
@@ -51,6 +52,7 @@ jar cfe JNIExample.jar top.janweehsia.Greeting -C out .
 # How to use
 
 ## Requirements:
+- Windows 64-Bit system
 - Java Runtime Kit (e.g. OpenJRE)
 
 ## Command to run
